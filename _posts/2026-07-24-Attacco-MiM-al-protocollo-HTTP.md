@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "Attacco MiM al protocollo HTTP"
-date: 2026-07-25
+date: 2026-07-24
 tags: [Attacchi]
 ---
 # Attacco tramite MiM al protocollo HTTP
