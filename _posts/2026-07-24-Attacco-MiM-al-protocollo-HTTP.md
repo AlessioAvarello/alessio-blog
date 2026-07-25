@@ -41,7 +41,7 @@ un filtro di visualizzazione: http.request.method == "POST". Al momento
 dell’autenticazione della vittima, Wireshark intercetta in tempo reale il segmento TCP contenente la richiesta di POST. All’interno della sezione HTML
 Form URL Encoded, vengono estratte in chiaro le credenziali digitate precedentemente dalla vittima.
 
-![Payload intercettato dall'attaccante](\assets\articolo1\credenzialihttp.png)
+![Payload intercettato dall'attaccante](/assets/articolo1/credenzialihttp.png)
 
 ### 4. Proprietà di Sicurezza Violate
 

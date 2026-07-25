@@ -37,8 +37,8 @@ author:
   type      : person 
   name      : Alessio Avarello
   url       : 
-  avatar    : /assets/avatar.jpg
-  bio       : Bio temporanea. 
+  avatar    : /assets/avatar.png
+  bio       : Studente di Informatica a Catania. Condivido appunti di studio, esperimenti di codice e note personali.
   email     : alessioavarello@outlook.it
   facebook  : # "user_name" the last part of your profile url, e.g. https://www.facebook.com/user_name
   twitter   : # "user_name" the last part of your profile url, e.g. https://twitter.com/user_name
