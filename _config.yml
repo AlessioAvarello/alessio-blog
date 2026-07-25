@@ -34,11 +34,11 @@ timezone: Europe/Rome # see https://en.wikipedia.org/wiki/List_of_tz_database_ti
 ## => Author and Social
 ##############################
 author:
-  type      : # "person" (default), "organization"
+  type      : person 
   name      : Alessio Avarello
   url       : 
-  avatar    : \assets\images\logo.png
-  bio       : Sono un ragazzo con la passione per l'informatica.
+  avatar    : /assets/avatar.jpg
+  bio       : Bio temporanea. 
   email     : alessioavarello@outlook.it
   facebook  : # "user_name" the last part of your profile url, e.g. https://www.facebook.com/user_name
   twitter   : # "user_name" the last part of your profile url, e.g. https://twitter.com/user_name
@@ -214,6 +214,7 @@ defaults:
       show_edit_on_github: false
       show_subscribe: false
       pageview: true
+      show_author_profile: true
 
 
 ## => Plugins
