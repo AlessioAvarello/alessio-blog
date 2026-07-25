@@ -4,7 +4,6 @@ title: "Attacco MiM al protocollo HTTP"
 date: 2026-07-24
 tags: [Attacchi]
 ---
-# Attacco tramite MiM al protocollo HTTP
 
 Questo articolo ha come fine quello di dimostrare le vulnerabilità dei protocolli che trasmettono dati in chiaro. L’attaccante si posiziona come Man in The Middle strategicamente fra il server host e il dispositivo della vittima. Tramite l’ARP Poisoning, l’attaccante riesce a deviare il normale flusso di traffico, facendo transitare i dati prima verso la sua macchina e poi verso il server. Deviato il flusso, è molto semplice per un attaccante violare confidenzialità, integrità, autenticazione e non ripudio. Questo attacco sfrutterà tre diversi endpoint: 
 
@@ -18,6 +17,31 @@ Lo script di backend definisce l’architettura logica del server target. Svilup
 si pone in ascolto esclusivamente sull’interfaccia locale (127.0.0.1), limitando la
 connettività all’host interno. Questa configurazione associa il server a tutte le interfacce di rete attive, proiettando il servizio sulla porta TCP 5000 e rendendolo accessibile da qualsiasi endpoint associato alla LAN fisica tramite digitazione dell’indirizzo IP locale dell’host. Per l’interazione con l’utente, lo script esegue il rendering del file login.html, posizionato nella cartella templates. L’elemento cardine della struttura e identificato dal tag **form method=”POST**”. Questa
 istruzione impone al browser di incapsulare i parametri inseriti nei campi di input username e password, direttamente all’interno del payload della richiesta HTTP POST non appena viene rilevato l’evento di submit.
+from flask import Flask, render_template, request
+```python
+app = Flask(__name__)
+
+DEMO_USER = "admin"
+DEMO_PASS = "password123"
+
+@app.route('/', methods=['GET', 'POST'])
+def login():
+    message = ""
+    if request.method == 'POST':
+        username = request.form.get('username')
+        password = request.form.get('password')
+
+        if username == DEMO_USER and password == DEMO_PASS:
+            message = "Login effettuato con successo! Benvenuto."
+        else:
+            message = "Credenziali errate. Riprova."
+
+    return render_template('login.html', message=message)
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000, debug=True)
+	        print("\n[INFO] Server fermati.")
+```
 
 ### 2. Deviazione del traffico tramite ARP Poisoning
 
